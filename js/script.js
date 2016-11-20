@@ -36,22 +36,22 @@ var test = {
         document.querySelector('ol').appendChild(questionLi);
     },
 
-    addAnswerLabel : function(listLi, answerNamber, radioName) {
-        var AnswerLabel = document.createElement('label');
+    addAnswerLabel : function(listLi, answerNamber, checkboxName) {
+        var answerLabel = document.createElement('label');
         var input = document.createElement('input');
         var answer = document.createTextNode(answerNamber);
-        input.type = 'radio';
-        input.name = radioName;
-        AnswerLabel.className = 'label__block';
-        AnswerLabel.appendChild(input);
-        AnswerLabel.appendChild(answer);
-        document.querySelector(listLi).appendChild(AnswerLabel);
+        input.type = 'checkbox';
+        input.name = checkboxName;
+        answerLabel.className = 'label__block';
+        answerLabel.appendChild(input);
+        answerLabel.appendChild(answer);
+        document.querySelector(listLi).appendChild(answerLabel);
     },
 
     addSubmit : function() {
         var submit = document.createElement('input');
         submit.type = 'submit';
-        submit.value = 'Проверить вариант';
+        submit.value = 'Проверить мои результаты';
         submit.className = 'submit__block';
         document.querySelector('form').appendChild(submit);
     },
@@ -64,7 +64,7 @@ var test = {
         for(var i = 1; i <= 3; i++) {
             this.addQuestionLi('li__block' + i, 'Вопрос № ' + i);
             for(var j = 1; j <= 3; j++) {
-                this.addAnswerLabel('.li__block' + i, 'Вариант ответа № ' + j, 'radio' + i);
+                this.addAnswerLabel('.li__block' + i, 'Вариант ответа № ' + j, 'checkbox' + i);
             }
         }
         this.addSubmit();
