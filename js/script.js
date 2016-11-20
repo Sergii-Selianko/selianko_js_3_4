@@ -1,9 +1,4 @@
-/**
- * Created by sergii on 18.11.2016.
- */
-console.log('Hello World!');
-
-var test = {
+; var test = {
 
     createWrapBlock : function() {
         var wrapBlock = document.createElement('div');
